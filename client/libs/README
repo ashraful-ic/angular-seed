@@ -1,0 +1,3 @@
+// This is a directory reserved for libraries
+// All Bower.js dependencies will be put under client/libs/bower
+// You can change this setting in the .bowerrc file that is provided
