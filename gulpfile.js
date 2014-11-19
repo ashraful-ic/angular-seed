@@ -78,16 +78,15 @@ gulp.task('jsmin', ['templates'], function () {
 
 
 // Watch file changes
-gulp.task('watch', ['compass', 'templates', 'js'], function () {
-//  gulp.watch('client/styles/less/**/*.less', ['less']);
-  gulp.watch('client/styles/sass/**/*.scss', ['compass']);
-  gulp.watch('client/templates/**/*.html', ['js']);
-  gulp.watch('client/app/src/**/*.js', ['js']);
+gulp.task('watch', ['less', 'templates', 'js'], function () {
+    gulp.watch('client/styles/less/**/*.less', ['less']);
+    gulp.watch('client/templates/**/*.html', ['js']);
+    gulp.watch('client/app/src/**/*.js', ['js']);
 });
 
 
 // Deploy to S3 test bucket
-gulp.task('deploy', ['compass', 'templates', 'jsmin'], function () {
+gulp.task('deploy', ['less', 'templates', 'jsmin'], function () {
     var aws = JSON.parse(fs.readFileSync('./aws.json'));
     var publisher = awspublish.create(aws);
     var headers = {
@@ -101,7 +100,7 @@ gulp.task('deploy', ['compass', 'templates', 'jsmin'], function () {
 
 
 // Deploy to S3 staging bucket
-gulp.task('deploy-staging', ['compass', 'templates', 'jsmin'], function () {
+gulp.task('deploy-staging', ['less', 'templates', 'jsmin'], function () {
     var aws = JSON.parse(fs.readFileSync('./aws-staging.json'));
     var publisher = awspublish.create(aws);
     var headers = {
@@ -116,7 +115,7 @@ gulp.task('deploy-staging', ['compass', 'templates', 'jsmin'], function () {
 
 
 // Deploy to S3 live/prod bucket
-gulp.task('deploy-live', ['compass', 'templates', 'jsmin'], function () {
+gulp.task('deploy-live', ['less', 'templates', 'jsmin'], function () {
     var aws = JSON.parse(fs.readFileSync('./aws-live.json'));
     var publisher = awspublish.create(aws);
     var headers = {
