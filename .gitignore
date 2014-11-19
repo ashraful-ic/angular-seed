@@ -4,3 +4,4 @@ assets/locale/*.json
 .idea
 *.DS_Store
 client/libs/bower
+node_modules
