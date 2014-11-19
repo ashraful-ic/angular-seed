@@ -3,5 +3,5 @@ assets/js/*.js
 assets/locale/*.json
 .idea
 *.DS_Store
-client/libs/bower
+bower_components
 node_modules
