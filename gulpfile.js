@@ -44,6 +44,7 @@ var includes = [
     'bower_components/moment/moment.js',
     'bower_components/angular-moment/angular-moment.js',
     'bower_components/angular-bootstrap/ui-bootstrap.js',
+    'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
     // 'bower_components/highcharts/highstock-custom.js',
     // Load main.js, config.js and then app related scripts
     'client/app/main.js',
