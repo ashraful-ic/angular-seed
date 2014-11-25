@@ -3,11 +3,35 @@
     <head lang="en">
         <meta charset="UTF-8">
         <title>Angular.js Seed project by Faisal Mahmud</title>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
 
-        <h2>5 + 6 = {{ 5 + 6 }}</h2>
-        <p>If the equation above is correct, then your Angular app has been properly loaded! Yaay! :)</p>
+        <div class="container">
+            <h1>Angular Seed</h1>
+
+            <hr>
+
+            <h2>Angular.js</h2>
+            <h3>5 + 6 = {{ 5 + 6 }}</h3>
+            <p>If the equation above is correct, then your Angular app has been properly loaded! Yaay! :)</p>
+
+            <hr>
+            <h2>Templatecache</h2>
+            <ng-include src="'start.html'"></ng-include>
+
+            <hr>
+            <h2>Angular Moment</h2>
+            This page was loaded: <span am-time-ago="timestamp"></span>
+
+        </div>
+
+
+
+
+        <h2></h2>
+
 
         <script src="js/app.js"></script>
     </body>
