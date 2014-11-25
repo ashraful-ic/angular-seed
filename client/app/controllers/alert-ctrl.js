@@ -1,6 +1,6 @@
 (function(){
 
-    angular.module('ui.bootstrap.demo').
+    angular.module('seed').
         controller('AlertCtrl', function ($scope) {
             $scope.alerts = [
                 { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
