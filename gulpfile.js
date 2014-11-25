@@ -11,6 +11,8 @@ var gulp = require('gulp'),
     awspublish = require('gulp-awspublish');
 
 
+var project = 'seed';
+
 // Compile less
 gulp.task('less', function(){
     return gulp.src(['client/styles/less/bootstrap.less']).
@@ -23,30 +25,32 @@ gulp.task('less', function(){
 // Create a $templateCache file
 gulp.task('templates', function(){
   return gulp.src('client/templates/**/*.html').
-    pipe(templateCache({module: 'shareville'})).
+    pipe(templateCache({module: project})).
     pipe(gulp.dest('client/tmp'));
 });
 
 
 var includes = [
     // Load angular first
-    'client/app/libs/angular/angular.js',
-    'client/app/libs/angular/angular-sanitize.js',
+    'bower_components/angular/angular.js',
+    'bower_components/angular-route/angular-route.js',
+    'bower_components/angular-sanitize/angular-sanitize.js',
     // Load 3rd party libs, preferably in the order that they are stated in main.js
-    'bower_components/ui-router/angular-ui-router.js',
+    'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-translate/angular-translate.js',
     'bower_components/angular-translate/angular-translate-loader-static-files.js',
-    'bower_components/lodash/lodash.js',
+    'bower_components/lodash/dist/lodash.js',
     'bower_components/angular-lodash/angular-lodash.js',
     'bower_components/moment/moment.js',
     'bower_components/angular-moment/angular-moment.js',
+    'bower_components/angular-bootstrap/ui-bootstrap.js',
     // 'bower_components/highcharts/highstock-custom.js',
     // Load main.js, config.js and then app related scripts
-    'client/app/src/main.js',
-    'client/app/src/config.js',
+    'client/app/main.js',
+    'client/app/config.js',
     // The template files are concatenated into templatecache
     'client/tmp/templates.js',
-    'client/app/src/**/*.js'];
+    'client/app/**/*.js'];
 
 
 // Build app without minification
