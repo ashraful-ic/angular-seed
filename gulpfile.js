@@ -85,7 +85,7 @@ gulp.task('jsmin', ['templates'], function () {
 gulp.task('watch', ['less', 'templates', 'js'], function () {
     gulp.watch('client/styles/less/**/*.less', ['less']);
     gulp.watch('client/templates/**/*.html', ['js']);
-    gulp.watch('client/app/src/**/*.js', ['js']);
+    gulp.watch('client/app/**/*.js', ['js']);
 });
 
 
